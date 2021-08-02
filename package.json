@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "prettier --write . --loglevel warn && next lint"
   },
   "dependencies": {
     "next": "11.0.1",
