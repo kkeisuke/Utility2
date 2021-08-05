@@ -4,7 +4,7 @@ import { SideMenu } from './SideMenu'
 
 export const Layout: FC = ({ children }) => {
   return (
-    <div className="flex gap-6 pt-16 px-6 pb-6">
+    <div className="flex gap-6 px-6 pt-16 pb-6">
       <Header />
       <aside className="sticky top-16 h-full">
         <SideMenu />

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "prettier --write . --loglevel warn && next lint",
+    "lint": "prettier --write . --loglevel warn && next lint --fix",
+    "lint:ci": "prettier --check . --loglevel warn && next lint",
     "test": "jest",
     "test:ci": "jest --silent"
   },

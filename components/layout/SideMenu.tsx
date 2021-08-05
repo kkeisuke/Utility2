@@ -4,7 +4,7 @@ import Link from 'next/link'
 const PageLink: VFC<{ href: string; title: string }> = ({ href, title }) => {
   return (
     <Link href={href}>
-      <a className="p-1 block hover:bg-gray-300 text-sm">{title}</a>
+      <a className="block p-1 text-sm hover:bg-gray-300">{title}</a>
     </Link>
   )
 }
