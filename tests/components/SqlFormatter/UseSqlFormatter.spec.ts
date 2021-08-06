@@ -26,4 +26,12 @@ describe('useSqlFormatter', () => {
     })
     expect(result.current.sql).toBe(`${formatedSQL}\n;\n\n${formatedSQL}`)
   })
+
+  it('空文字の場合は空文字が出力される', () => {
+    const { result } = renderHook(() => useSqlFormatter())
+    act(() => {
+      result.current.setText('')
+    })
+    expect(result.current.sql).toBe('')
+  })
 })
