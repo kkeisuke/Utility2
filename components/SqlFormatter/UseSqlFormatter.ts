@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction, useEffect, useState } from 'react'
 import { format } from 'sql-formatter'
 
-const LOCAL_STORAGE_KEY = 'sqlFormatterStore.text'
+const LOCAL_STORAGE_KEY = 'useSqlFormatter.text'
 
 function sqlFormat(text: string) {
   return format(text).split(';').join('\n;\n')
