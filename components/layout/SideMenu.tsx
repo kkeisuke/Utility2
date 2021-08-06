@@ -18,6 +18,9 @@ export const SideMenu: VFC = () => {
       <li>
         <PageLink href="/sql_format" title="SQL format" />
       </li>
+      <li>
+        <PageLink href="/json_format" title="JSON format" />
+      </li>
     </ul>
   )
 }
