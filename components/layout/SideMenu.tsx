@@ -1,10 +1,14 @@
 import { VFC } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const PageLink: VFC<{ href: string; title: string }> = ({ href, title }) => {
+  const router = useRouter()
+  const active = href === router.asPath
+
   return (
     <Link href={href}>
-      <a className="block p-1 text-sm hover:bg-gray-300">{title}</a>
+      <a className={`block p-1 text-sm hover:bg-gray-200 ${active ? 'bg-gray-200' : ''}`}>{title}</a>
     </Link>
   )
 }
