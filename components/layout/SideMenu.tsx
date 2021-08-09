@@ -25,6 +25,9 @@ export const SideMenu: VFC = () => {
       <li>
         <PageLink href="/json_format" title="JSON format" />
       </li>
+      <li>
+        <PageLink href="/dummy_svg" title="Dummy SVG" />
+      </li>
     </ul>
   )
 }
