@@ -10,7 +10,7 @@ export const InputNumber: VFC<InputNumberProps> = (props) => {
     <input
       type="number"
       value={props.value}
-      className="p-2 border border-gray-400"
+      className="p-2 rounded border border-gray-400"
       onChange={props.onChange}
       onFocus={(event) => {
         event.target.select()
