@@ -52,7 +52,7 @@ export function useDummySVG(): UseDummySVG {
     if (svg.current) {
       setSvgData(`${encodeURIComponent(new XMLSerializer().serializeToString(svg.current))}`)
     }
-  }, [svg, params, title])
+  }, [svg, params])
 
   useEffect(() => {
     ;(async () => {
