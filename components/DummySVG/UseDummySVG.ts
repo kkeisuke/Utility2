@@ -10,22 +10,17 @@ type Params = {
   fontSize: number
 }
 
-type ParamsAction = {
-  type: keyof Params
-  payload: Partial<Params>
-}
-
 type UseDummySVG = {
   svg: RefObject<SVGSVGElement>
   svgData: string
   imgData: string
   title: string
   params: Params
-  dispatch: Dispatch<ParamsAction>
+  dispatch: Dispatch<Partial<Params>>
 }
 
-function paramsReducer(params: Params, action: ParamsAction) {
-  return Object.assign({}, params, action.payload)
+function paramsReducer(params: Params, newParams: Partial<Params>) {
+  return Object.assign({}, params, newParams)
 }
 
 const initParams: UseDummySVG['params'] = {

@@ -12,29 +12,29 @@ export const DummySVG: VFC = () => {
       <div className="flex gap-4 mb-4">
         <label>
           <div className="mr-2">width</div>
-          <InputNumber value={params.width} onChange={(event) => dispatch({ type: 'width', payload: { width: event.target.valueAsNumber } })}></InputNumber>
+          <InputNumber value={params.width} onChange={(event) => dispatch({ width: event.target.valueAsNumber })}></InputNumber>
         </label>
         <label>
           <div className="mr-2">height</div>
-          <InputNumber value={params.height} onChange={(event) => dispatch({ type: 'height', payload: { height: event.target.valueAsNumber } })}></InputNumber>
+          <InputNumber value={params.height} onChange={(event) => dispatch({ height: event.target.valueAsNumber })}></InputNumber>
         </label>
         <label>
           <div className="mr-2">text</div>
-          <InputText value={params.text} onChange={(event) => dispatch({ type: 'text', payload: { text: event.target.value } })}></InputText>
+          <InputText value={params.text} onChange={(event) => dispatch({ text: event.target.value })}></InputText>
         </label>
       </div>
       <div className="flex gap-4 mb-4">
         <label>
           <div className="mr-2">background</div>
-          <InputText value={params.background} onChange={(event) => dispatch({ type: 'background', payload: { background: event.target.value } })}></InputText>
+          <InputText value={params.background} onChange={(event) => dispatch({ background: event.target.value })}></InputText>
         </label>
         <label>
           <div className="mr-2">color</div>
-          <InputText value={params.color} onChange={(event) => dispatch({ type: 'color', payload: { color: event.target.value } })}></InputText>
+          <InputText value={params.color} onChange={(event) => dispatch({ color: event.target.value })}></InputText>
         </label>
         <label>
-          <div className="mr-2">color</div>
-          <InputNumber value={params.fontSize} onChange={(event) => dispatch({ type: 'fontSize', payload: { fontSize: event.target.valueAsNumber } })}></InputNumber>
+          <div className="mr-2">fontSize</div>
+          <InputNumber value={params.fontSize} onChange={(event) => dispatch({ fontSize: event.target.valueAsNumber })}></InputNumber>
         </label>
       </div>
       <div className="flex gap-4 mb-8">

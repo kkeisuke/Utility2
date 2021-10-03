@@ -6,7 +6,7 @@ describe('useDummySVG', () => {
   it('params.text があれば title は text になる', () => {
     const { result } = renderHook(() => useDummySVG())
     act(() => {
-      result.current.dispatch({ type: 'text', payload: { text: 'タイトル' } })
+      result.current.dispatch({ text: 'タイトル' })
     })
     expect(result.current.title).toBe('タイトル')
   })
@@ -14,8 +14,8 @@ describe('useDummySVG', () => {
   it('params.text がなければ title は width x height になる', () => {
     const { result } = renderHook(() => useDummySVG())
     act(() => {
-      result.current.dispatch({ type: 'width', payload: { width: 300 } })
-      result.current.dispatch({ type: 'height', payload: { height: 200 } })
+      result.current.dispatch({ width: 300 })
+      result.current.dispatch({ height: 200 })
     })
     expect(result.current.title).toBe('300 x 200')
   })
