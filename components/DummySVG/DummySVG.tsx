@@ -9,7 +9,7 @@ export const DummySVG: VFC = () => {
 
   return (
     <>
-      <div className="flex gap-4 mb-4">
+      <div className="mb-4 flex gap-4">
         <label>
           <div className="mr-2">width</div>
           <InputNumber value={params.width} onChange={(event) => dispatch({ width: event.target.valueAsNumber })}></InputNumber>
@@ -23,7 +23,7 @@ export const DummySVG: VFC = () => {
           <InputText value={params.text} onChange={(event) => dispatch({ text: event.target.value })}></InputText>
         </label>
       </div>
-      <div className="flex gap-4 mb-4">
+      <div className="mb-4 flex gap-4">
         <label>
           <div className="mr-2">background</div>
           <InputText value={params.background} onChange={(event) => dispatch({ background: event.target.value })}></InputText>
@@ -37,7 +37,7 @@ export const DummySVG: VFC = () => {
           <InputNumber value={params.fontSize} onChange={(event) => dispatch({ fontSize: event.target.valueAsNumber })}></InputNumber>
         </label>
       </div>
-      <div className="flex gap-4 mb-8">
+      <div className="mb-8 flex gap-4">
         <div>
           <div>svg</div>
           <svg ref={svg} xmlns="http://www.w3.org/2000/svg" width={params.width} height={params.height} fontSize={params.fontSize}>

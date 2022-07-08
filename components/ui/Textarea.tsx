@@ -7,5 +7,5 @@ type TextareaProps = {
 }
 
 export const Textarea: VFC<TextareaProps> = (props) => {
-  return <textarea className="p-2 mb-1 w-full rounded border border-gray-400" value={props.value} rows={props.rows || 10} onChange={props.onChange} />
+  return <textarea className="mb-1 w-full rounded border border-gray-400 p-2" value={props.value} rows={props.rows || 10} onChange={props.onChange} />
 }

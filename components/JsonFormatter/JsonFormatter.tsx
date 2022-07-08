@@ -11,13 +11,13 @@ export const JsonFormatter: VFC = () => {
       <div className="mb-2">
         {indents.map((i) => {
           return (
-            <label key={i} className="inline-block pr-2 mr-2 cursor-pointer">
+            <label key={i} className="mr-2 inline-block cursor-pointer pr-2">
               <input type="radio" name="indent" value={i} checked={i === indent} className="cursor-pointer" onChange={() => setIndent(i)} /> {i === '\t' ? 'tab' : i}
             </label>
           )
         })}
       </div>
-      <pre className={`p-3 overflow-auto bg-gray-100 ${json ? 'text-gray-700' : 'text-gray-400'}`}>{json || 'formatted JSON'}</pre>
+      <pre className={`overflow-auto bg-gray-100 p-3 ${json ? 'text-gray-700' : 'text-gray-400'}`}>{json || 'formatted JSON'}</pre>
     </>
   )
 }
