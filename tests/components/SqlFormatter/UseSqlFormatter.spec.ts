@@ -24,7 +24,7 @@ describe('useSqlFormatter', () => {
     act(() => {
       result.current.setText(`${targetSQL};${targetSQL}`)
     })
-    expect(result.current.sql).toBe(`${formatedSQL}\n;\n\n${formatedSQL}`)
+    expect(result.current.sql).toBe(`${formatedSQL}\n;\n\n\n${formatedSQL}`)
   })
 
   it('空文字の場合は空文字が出力される', () => {
