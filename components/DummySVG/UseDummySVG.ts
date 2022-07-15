@@ -1,4 +1,4 @@
-import { Dispatch, RefObject, useEffect, useReducer, useRef, useState } from 'react'
+import { Dispatch, RefObject, useEffect, useMemo, useReducer, useRef, useState } from 'react'
 import { createImage } from '../../lib/createImage'
 
 type Params = {
@@ -37,17 +37,14 @@ export function useDummySVG(): UseDummySVG {
   const svg = useRef<SVGSVGElement>(null)
   const [svgData, setSvgData] = useState('')
   const [imgData, setImgData] = useState('')
-  const [title, setTitle] = useState('')
 
-  useEffect(() => {
-    setTitle(params.text || `${params.width} x ${params.height}`)
-  }, [params])
+  const title = useMemo(() => params.text || `${params.width} x ${params.height}`, [params])
 
   useEffect(() => {
     if (svg.current) {
       setSvgData(`${encodeURIComponent(new XMLSerializer().serializeToString(svg.current))}`)
     }
-  }, [svg, params])
+  }, [svg, params, title])
 
   useEffect(() => {
     ;(async () => {
