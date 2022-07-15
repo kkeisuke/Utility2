@@ -1,10 +1,10 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import { Layout } from '../components/layout/Layout'
 import { AppHead } from '../components/layout/AppHead'
 import { PageTitle } from '../components/layout/PageTitle'
 import { SqlFormatter } from '../components/SqlFormatter/SqlFormatter'
 
-const SqlFormat: VFC = () => {
+const SqlFormat: FC = () => {
   const title = 'SQL format'
 
   return (

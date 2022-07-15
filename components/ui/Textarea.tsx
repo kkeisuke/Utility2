@@ -1,4 +1,4 @@
-import { ChangeEventHandler, VFC } from 'react'
+import { ChangeEventHandler, FC } from 'react'
 
 type TextareaProps = {
   value: string
@@ -6,6 +6,6 @@ type TextareaProps = {
   onChange?: ChangeEventHandler<HTMLTextAreaElement>
 }
 
-export const Textarea: VFC<TextareaProps> = (props) => {
+export const Textarea: FC<TextareaProps> = (props) => {
   return <textarea className="mb-1 w-full rounded border border-gray-400 p-2" value={props.value} rows={props.rows || 10} onChange={props.onChange} />
 }

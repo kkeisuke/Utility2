@@ -1,8 +1,8 @@
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 import { Header } from './Header'
 import { SideMenu } from './SideMenu'
 
-export const Layout: FC = ({ children }) => {
+export const Layout: FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <div className="flex gap-6 px-6 pt-16 pb-6">
       <Header />

@@ -1,10 +1,10 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import { Layout } from '../components/layout/Layout'
 import { AppHead } from '../components/layout/AppHead'
 import { PageTitle } from '../components/layout/PageTitle'
 import { DummySVG } from '../components/DummySVG/DummySVG'
 
-const DummySVGPage: VFC = () => {
+const DummySVGPage: FC = () => {
   const title = 'Dummy SVG'
 
   return (

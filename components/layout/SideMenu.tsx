@@ -1,8 +1,8 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-const PageLink: VFC<{ href: string; title: string }> = ({ href, title }) => {
+const PageLink: FC<{ href: string; title: string }> = ({ href, title }) => {
   const router = useRouter()
   const active = href === router.asPath
 
@@ -13,7 +13,7 @@ const PageLink: VFC<{ href: string; title: string }> = ({ href, title }) => {
   )
 }
 
-export const SideMenu: VFC = () => {
+export const SideMenu: FC = () => {
   return (
     <ul>
       <li>

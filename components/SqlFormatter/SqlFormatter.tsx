@@ -1,8 +1,8 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import { useSqlFormatter } from './UseSqlFormatter'
 import { Textarea } from '../ui/Textarea'
 
-export const SqlFormatter: VFC = () => {
+export const SqlFormatter: FC = () => {
   const { text, sql, setText } = useSqlFormatter()
 
   return (

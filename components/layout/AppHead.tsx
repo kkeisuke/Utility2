@@ -1,4 +1,4 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import Head from 'next/head'
 
 type AppHeadProps = {
@@ -6,7 +6,7 @@ type AppHeadProps = {
   description: string
 }
 
-export const AppHead: VFC<AppHeadProps> = (props) => {
+export const AppHead: FC<AppHeadProps> = (props) => {
   return (
     <Head>
       <title>{props.title} : Utility</title>

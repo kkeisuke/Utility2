@@ -1,10 +1,10 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import { Layout } from '../components/layout/Layout'
 import { AppHead } from '../components/layout/AppHead'
 import { PageTitle } from '../components/layout/PageTitle'
 import { JsonFormatter } from '../components/JsonFormatter/JsonFormatter'
 
-const JsonFormat: VFC = () => {
+const JsonFormat: FC = () => {
   const title = 'JSON format'
 
   return (

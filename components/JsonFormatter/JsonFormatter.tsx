@@ -1,8 +1,8 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import { indents, useJsonFormatter } from './UseJsonFormatter'
 import { Textarea } from '../ui/Textarea'
 
-export const JsonFormatter: VFC = () => {
+export const JsonFormatter: FC = () => {
   const { text, json, indent, setText, setIndent } = useJsonFormatter()
 
   return (

@@ -1,11 +1,11 @@
-import { ChangeEventHandler, VFC } from 'react'
+import { ChangeEventHandler, FC } from 'react'
 
 type InputNumberProps = {
   value: number
   onChange?: ChangeEventHandler<HTMLInputElement>
 }
 
-export const InputNumber: VFC<InputNumberProps> = (props) => {
+export const InputNumber: FC<InputNumberProps> = (props) => {
   return (
     <input
       type="number"

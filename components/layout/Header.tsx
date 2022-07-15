@@ -1,8 +1,8 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import Link from 'next/link'
 import { FaHome, FaGithub, FaTwitter } from 'react-icons/fa'
 
-export const Header: VFC = () => {
+export const Header: FC = () => {
   return (
     <header className="fixed top-0 left-0 w-full bg-gray-600 p-2 text-white">
       <div className="flex items-center justify-between">

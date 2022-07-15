@@ -1,10 +1,10 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import { useDummySVG } from './UseDummySVG'
 import { InputText } from '../ui/InputText'
 import { InputNumber } from '../ui/InputNumber'
 import { DownloadBtn } from './DownloadBtn'
 
-export const DummySVG: VFC = () => {
+export const DummySVG: FC = () => {
   const { svg, svgData, imgData, title, params, dispatch } = useDummySVG()
 
   return (
