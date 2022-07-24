@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useEffect, useMemo, useState } from 'react'
+import { ChangeEvent, useCallback, useEffect, useMemo, useState } from 'react'
 import { format } from 'sql-formatter'
 
 const LOCAL_STORAGE_KEY = 'useSqlFormatter.text'
@@ -10,7 +10,7 @@ function sqlFormat(text: string) {
 type UseSqlFormatter = {
   text: string
   sql: string
-  setText: Dispatch<SetStateAction<string>>
+  onChangeText: (event: ChangeEvent<HTMLTextAreaElement>) => void
 }
 
 export function useSqlFormatter(): UseSqlFormatter {
@@ -20,15 +20,16 @@ export function useSqlFormatter(): UseSqlFormatter {
     setText(localStorage.getItem(LOCAL_STORAGE_KEY) || '')
   }, [])
 
-  useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY, text)
-  }, [text])
+  const onChangeText: UseSqlFormatter['onChangeText'] = useCallback((event) => {
+    setText(event.target.value)
+    localStorage.setItem(LOCAL_STORAGE_KEY, event.target.value)
+  }, [])
 
   const sql = useMemo(() => sqlFormat(text), [text])
 
   return {
     text,
     sql,
-    setText
+    onChangeText
   }
 }
