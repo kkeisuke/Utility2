@@ -1,4 +1,4 @@
-import { ChangeEvent, useCallback, useEffect, useMemo, useState } from 'react'
+import { ChangeEvent, Dispatch, SetStateAction, useCallback, useEffect, useMemo, useState } from 'react'
 import { format } from 'sql-formatter'
 
 const LOCAL_STORAGE_KEY = 'useSqlFormatter.text'
@@ -10,6 +10,7 @@ function sqlFormat(text: string) {
 type UseSqlFormatter = {
   text: string
   sql: string
+  setText: Dispatch<SetStateAction<string>>
   onChangeText: (event: ChangeEvent<HTMLTextAreaElement>) => void
 }
 
@@ -30,6 +31,7 @@ export function useSqlFormatter(): UseSqlFormatter {
   return {
     text,
     sql,
+    setText,
     onChangeText
   }
 }

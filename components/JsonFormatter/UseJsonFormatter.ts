@@ -11,6 +11,7 @@ type UseJsonFormatter = {
   json: string
   indent: Indent
   setIndent: Dispatch<SetStateAction<Indent>>
+  setText: Dispatch<SetStateAction<string>>
   onChangeText: (event: ChangeEvent<HTMLTextAreaElement>) => void
 }
 
@@ -46,6 +47,7 @@ export function useJsonFormatter(): UseJsonFormatter {
     json,
     indent,
     setIndent,
+    setText,
     onChangeText
   }
 }
