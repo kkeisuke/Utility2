@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useEffect, useMemo, useState } from 'react'
+import { ChangeEvent, Dispatch, SetStateAction, useCallback, useEffect, useMemo, useState } from 'react'
 
 const LOCAL_STORAGE_KEY = 'useJsonFormatter.text'
 export const indents = [2, 4, '\t'] as const
@@ -10,8 +10,8 @@ type UseJsonFormatter = {
   text: string
   json: string
   indent: Indent
-  setText: Dispatch<SetStateAction<string>>
   setIndent: Dispatch<SetStateAction<Indent>>
+  onChangeText: (event: ChangeEvent<HTMLTextAreaElement>) => void
 }
 
 function jsonFormat(text: string, indent: Indent) {
@@ -34,9 +34,10 @@ export function useJsonFormatter(): UseJsonFormatter {
     setText(localStorage.getItem(LOCAL_STORAGE_KEY) || '')
   }, [])
 
-  useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY, text)
-  }, [text, indent])
+  const onChangeText: UseJsonFormatter['onChangeText'] = useCallback((event) => {
+    setText(event.target.value)
+    localStorage.setItem(LOCAL_STORAGE_KEY, event.target.value)
+  }, [])
 
   const json = useMemo(() => jsonFormat(text, indent), [text, indent])
 
@@ -44,7 +45,7 @@ export function useJsonFormatter(): UseJsonFormatter {
     text,
     json,
     indent,
-    setText,
-    setIndent
+    setIndent,
+    onChangeText
   }
 }

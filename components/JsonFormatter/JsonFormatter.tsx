@@ -3,11 +3,11 @@ import { indents, useJsonFormatter } from './UseJsonFormatter'
 import { Textarea } from '../ui/Textarea'
 
 export const JsonFormatter: FC = () => {
-  const { text, json, indent, setText, setIndent } = useJsonFormatter()
+  const { text, json, indent, onChangeText, setIndent } = useJsonFormatter()
 
   return (
     <>
-      <Textarea value={text} onChange={(event) => setText(event.target.value)} />
+      <Textarea value={text} onChange={onChangeText} />
       <div className="mb-2">
         {indents.map((i) => {
           return (
