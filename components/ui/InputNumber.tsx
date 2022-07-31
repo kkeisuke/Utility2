@@ -1,11 +1,11 @@
-import { ChangeEventHandler, FC } from 'react'
+import { ChangeEventHandler, FC, memo } from 'react'
 
 type InputNumberProps = {
   value: number
   onChange?: ChangeEventHandler<HTMLInputElement>
 }
 
-export const InputNumber: FC<InputNumberProps> = (props) => {
+export const InputNumber: FC<InputNumberProps> = memo((props) => {
   return (
     <input
       type="number"
@@ -17,4 +17,6 @@ export const InputNumber: FC<InputNumberProps> = (props) => {
       }}
     />
   )
-}
+})
+
+InputNumber.displayName = 'InputNumber'
