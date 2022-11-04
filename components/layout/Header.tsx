@@ -10,20 +10,14 @@ export const Header: FC = () => {
           <Link href="/">Utility</Link>
         </h1>
         <div className="flex items-center gap-2">
-          <Link href="https://kkeisuke.com/">
-            <a target="_blank">
-              <FaHome />
-            </a>
+          <Link href="https://kkeisuke.com/" target="_blank">
+            <FaHome />
           </Link>
-          <Link href="https://github.com/kkeisuke/Utility2">
-            <a target="_blank" rel="noopener noreferrer">
-              <FaGithub />
-            </a>
+          <Link href="https://github.com/kkeisuke/Utility2" target="_blank" rel="noopener noreferrer">
+            <FaGithub />
           </Link>
-          <Link href="https://twitter.com/kkeisuke">
-            <a target="_blank" rel="noopener noreferrer">
-              <FaTwitter />
-            </a>
+          <Link href="https://twitter.com/kkeisuke" target="_blank" rel="noopener noreferrer">
+            <FaTwitter />
           </Link>
         </div>
       </div>

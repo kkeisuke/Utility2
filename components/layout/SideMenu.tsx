@@ -7,8 +7,8 @@ const PageLink: FC<{ href: string; title: string }> = ({ href, title }) => {
   const active = href === router.asPath
 
   return (
-    <Link href={href}>
-      <a className={`block p-1 text-sm hover:bg-gray-200 ${active ? 'bg-gray-200' : ''}`}>{title}</a>
+    <Link href={href} className={`block p-1 text-sm hover:bg-gray-200 ${active ? 'bg-gray-200' : ''}`}>
+      {title}
     </Link>
   )
 }
