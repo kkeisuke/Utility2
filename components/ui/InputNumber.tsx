@@ -1,19 +1,16 @@
-import { ChangeEventHandler, FC, memo } from 'react'
+import { FC, InputHTMLAttributes, memo } from 'react'
 
-type InputNumberProps = {
-  value: number
-  onChange?: ChangeEventHandler<HTMLInputElement>
-}
+type InputNumberProps = InputHTMLAttributes<HTMLInputElement>
 
 export const InputNumber: FC<InputNumberProps> = memo((props) => {
   return (
     <input
+      {...props}
       type="number"
-      value={props.value}
-      className="rounded border border-gray-400 p-2"
-      onChange={props.onChange}
+      className={`${props.className || ''} rounded border border-gray-400 p-2`.trim()}
       onFocus={(event) => {
         event.target.select()
+        props.onFocus?.(event)
       }}
     />
   )

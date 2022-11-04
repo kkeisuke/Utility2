@@ -2,7 +2,7 @@ import { ChangeEvent, FC, useCallback } from 'react'
 import { useDummySVG } from './UseDummySVG'
 import { InputText } from '../ui/InputText'
 import { InputNumber } from '../ui/InputNumber'
-import { DownloadBtn } from './DownloadBtn'
+import { Button } from '../ui/Button'
 
 export const DummySVG: FC = () => {
   const { svg, svgData, imgData, title, params, dispatch } = useDummySVG()
@@ -49,12 +49,12 @@ export const DummySVG: FC = () => {
         </div>
       </div>
       <div className="flex gap-4">
-        <DownloadBtn href={`data:image/svg+xml;charset=utf-8,${svgData}`} download={`${title}.svg`}>
+        <Button href={`data:image/svg+xml;charset=utf-8,${svgData}`} download={`${title}.svg`} color="success">
           Download SVG
-        </DownloadBtn>
-        <DownloadBtn href={imgData} download={`${title}.png`}>
+        </Button>
+        <Button href={imgData} download={`${title}.png`} color="success">
           Download PNG
-        </DownloadBtn>
+        </Button>
       </div>
     </>
   )

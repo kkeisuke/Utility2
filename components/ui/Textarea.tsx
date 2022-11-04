@@ -1,13 +1,9 @@
-import { ChangeEventHandler, FC, memo } from 'react'
+import { FC, memo, TextareaHTMLAttributes } from 'react'
 
-type TextareaProps = {
-  value: string
-  rows?: number
-  onChange?: ChangeEventHandler<HTMLTextAreaElement>
-}
+type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement>
 
 export const Textarea: FC<TextareaProps> = memo((props) => {
-  return <textarea className="mb-1 w-full rounded border border-gray-400 p-2" value={props.value} rows={props.rows || 10} onChange={props.onChange} />
+  return <textarea {...props} className={`${props.className || ''} mb-1 w-full rounded border border-gray-400 p-2`.trim()} rows={props.rows || 10} />
 })
 
 Textarea.displayName = 'Textarea'
