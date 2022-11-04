@@ -1,4 +1,4 @@
-import { renderHook, act } from '@testing-library/react-hooks'
+import { renderHook, act } from '@testing-library/react'
 import { useSqlFormatter } from '../../../components/SqlFormatter/UseSqlFormatter'
 
 const targetSQL = `UPDATE "schema"."table" SET "name" = 'テスト' WHERE "schema"."table"."id" = '12345'`

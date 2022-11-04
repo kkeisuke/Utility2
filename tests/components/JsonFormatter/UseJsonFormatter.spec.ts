@@ -1,4 +1,4 @@
-import { renderHook, act } from '@testing-library/react-hooks'
+import { renderHook, act } from '@testing-library/react'
 import { NOT_JSON, useJsonFormatter } from '../../../components/JsonFormatter/UseJsonFormatter'
 
 const targetJson = '{"hoge": "huga", "huge": "hoga"}'
