@@ -5,6 +5,10 @@ const colors = {
     default: 'bg-cyan-600',
     hover: 'hover:bg-cyan-500'
   },
+  secondary: {
+    default: 'bg-slate-600',
+    hover: 'hover:bg-slate-500'
+  },
   success: {
     default: 'bg-green-600',
     hover: 'hover:bg-green-500'

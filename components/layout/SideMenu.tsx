@@ -28,6 +28,9 @@ export const SideMenu: FC = () => {
       <li>
         <PageLink href="/dummy_svg" title="Dummy SVG" />
       </li>
+      <li>
+        <PageLink href="/datetime_format" title="DateTime format" />
+      </li>
     </ul>
   )
 }
