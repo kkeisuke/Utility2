@@ -18,21 +18,28 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & CustomProps
 type AnchorProps = AnchorHTMLAttributes<HTMLAnchorElement> & CustomProps
 
 export const Button: FC<ButtonProps | AnchorProps> = memo((props) => {
-  const colorClassName = `${colors[props.color || 'primary'].default} ${colors[props.color || 'primary'].hover}`
+  const { color, ...restProps } = props
+
+  const colorClassName = `${colors[color || 'primary'].default} ${colors[color || 'primary'].hover}`
 
   const mergedProps = {
-    ...props,
+    ...restProps,
     className: `${props.className || ''} ${colorClassName} rounded py-2 px-4 text-white`.trim()
   }
 
   if (isAnchor(mergedProps)) {
     return createElement('a', mergedProps)
   }
-  return createElement('button', mergedProps)
+
+  return createElement('button', isButton(mergedProps) ? mergedProps : undefined)
 })
 
 Button.displayName = 'Button'
 
 function isAnchor(props: ButtonProps | AnchorProps): props is AnchorProps {
   return Object.hasOwn(props, 'href')
+}
+
+function isButton(props: ButtonProps | AnchorProps): props is ButtonProps {
+  return !isAnchor(props)
 }
